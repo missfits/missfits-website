@@ -1,0 +1,161 @@
+@use "styles";
+
+$errorColor: #f00a;
+$bannerImg: url("../assets/images/banners/contact-background.jpg");
+
+.contact {
+  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $bannerImg;
+  background-position: bottom;
+}
+
+.section {
+  text-align: center;
+}
+
+.section div {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  flex-direction: column !important;
+}
+
+legend {
+  font-family: "Cabin Sketch", cursive;
+}
+
+.required {
+  color: red;
+}
+
+input[type="text"] {
+  transition: styles.$transition;
+  padding: 10px;
+  font-family: "Sen", Arial, sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #0001;
+  outline: none;
+  background-color: transparent;
+}
+
+.invalid {
+  transition: styles.$transition;
+  border-bottom: 1px solid #f008 !important;
+  background-color: #f003 !important;
+}
+
+input[type="submit"] {
+  transition: styles.$transition;
+  border: none;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #74bbed;
+  padding: 10px 20px;
+  outline: none;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  transition: styles.$transition;
+  background-color: #3399E0;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid #0001;
+  outline: none;
+  font-family: "Sen", Arial, sans-serif;
+  font-size: 16px;
+  height: 75px;
+  resize: none;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.input-div {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.input-div input {
+  flex: 1;
+}
+
+.input-div textarea {
+  flex: 1;
+}
+
+.underline {
+  transition: styles.$transition;
+  display: inline-block;
+  bottom: 0;
+  transform: scaleX(0);
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: styles.$tintColor;
+}
+
+.input-div > input[type="text"]:focus + .underline {
+  transform: scaleX(1);
+}
+
+.input-div > textarea:focus + .underline {
+  transform: scaleX(1);
+}
+
+.hidden-label {
+  display: none;
+}
+
+fieldset {
+  border: none;
+  flex: 1;
+}
+
+.fieldset-inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.radio-buttons {
+  padding: 10px;
+}
+
+.email-error {
+  transition: styles.$transition;
+  font-size: 12px;
+  flex: 1;
+  color: $errorColor;
+  padding-top: 3px;
+  transform: scaleY(0);
+}
+
+.error-shown {
+  transition: styles.$transition;
+  transform: scaleY(1);
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.img {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.large-textarea {
+  height: 125px;
+}

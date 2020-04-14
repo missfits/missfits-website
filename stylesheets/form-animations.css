@@ -1,0 +1,119 @@
+@charset "UTF-8";
+input[type=radio], input[type=checkbox] {
+  display: none;
+}
+input[type=radio] + label, input[type=checkbox] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 24px;
+  margin-right: 32px;
+  cursor: pointer;
+  line-height: 16px;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+  font-family: "Sen", Arial, sans-serif;
+  font-size: 16px;
+}
+input[type=radio] + label:before, input[type=radio] + label:after, input[type=checkbox] + label:before, input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  color: #f5f5f5;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+input[type=radio] + label:before {
+  box-shadow: inset 0 0 0 1px #666565, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+input[type=radio] + label:hover {
+  color: #3399E0;
+}
+input[type=radio] + label:hover:before {
+  animation-duration: 0.5s;
+  animation-name: change-size;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+
+input[type=radio]:checked + label:hover {
+  color: #333333;
+  cursor: default;
+}
+input[type=radio]:checked + label:before {
+  animation-duration: 0.2s;
+  animation-name: select-radio;
+  animation-iteration-count: 1;
+  animation-direction: Normal;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 3px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+
+@keyframes change-size {
+  from {
+    box-shadow: 0 0 0 0 #3399E0, inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  to {
+    box-shadow: 0 0 0 1px #3399E0, inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+}
+@keyframes select-radio {
+  0% {
+    box-shadow: 0 0 0 0 #99D1F7, inset 0 0 0 2px #FFFFFF, inset 0 0 0 3px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  90% {
+    box-shadow: 0 0 0 10px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 2px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  100% {
+    box-shadow: 0 0 0 12px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 3px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+}
+@keyframes select-checkbox {
+  0% {
+    box-shadow: 0 0 0 0 #99D1F7, inset 0 0 0 2px #FFFFFF, inset 0 0 0 3px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  90% {
+    box-shadow: 0 0 0 10px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 0 #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  100% {
+    box-shadow: 0 0 0 12px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 0 #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+}
+input[type=checkbox] + label:hover {
+  color: #3399E0;
+}
+input[type=checkbox] + label:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  line-height: 17px;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: inset 0 0 0 1px #666565, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+input[type=checkbox] + label:hover:before {
+  color: #FFFFFF;
+  animation-duration: 0.5s;
+  animation-name: change-size;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: #C3C3C3;
+  color: #FFFFFF;
+  animation-duration: 0.2s;
+  animation-name: select-checkbox;
+  animation-iteration-count: 1;
+  animation-direction: Normal;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 0 #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+
+/*# sourceMappingURL=form-animations.css.map */
