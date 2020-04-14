@@ -1,0 +1,21 @@
+.page-not-found {
+  width: 65vw;
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 75px;
+  margin-left: 17.5vw;
+}
+
+@media (min-width: 1538.4615384615px) {
+  .page-not-found {
+    width: 1000px;
+    margin-left: calc((100vw - 1000px) / 2.0);
+  }
+}
+
+/*# sourceMappingURL=404.css.map */

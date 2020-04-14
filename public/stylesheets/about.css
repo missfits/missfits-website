@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sen", Arial, sans-serif;
+  font-size: 1.125em;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+h1 {
+  font-family: "Cabin Sketch", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 8vw;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Cabin Sketch", cursive;
+  font-weight: normal;
+  margin: 0;
+  font-size: 4vw;
+}
+
+h3 {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 0;
+}
+
+h6 {
+  font-family: "Cabin Sketch", cursive;
+}
+
+p {
+  margin: 0;
+}
+
+p a, h3 a {
+  transition: all 0.2s ease;
+  opacity: 1;
+}
+
+p a:hover, h3 a:hover {
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.dark {
+  color: #fff;
+}
+
+.scroll-to-hidden, .hidden-onload {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.scroll-to-shown, .shown-onload {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.delay {
+  transition: opacity 0.5s ease 0.2s;
+}
+
+.section {
+  padding: 60px;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.background1 {
+  background-color: #ffffff;
+}
+
+.background2 {
+  background-color: #f8f8f8;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60vh;
+  width: 100vw;
+  padding: 60px;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+.background-image {
+  background-attachment: fixed;
+  background-size: cover;
+  height: 500px;
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 52px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}
+.about {
+  background-image: linear-gradient(#00000040, #00000040), url("../assets/images/banners/about-background.jpg");
+}
+
+.first {
+  box-sizing: border-box;
+  min-height: 40vh;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.about-summary {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about-summary p {
+  margin: 15px;
+  flex: 1;
+}
+
+.troubleshooting {
+  background-image: url("../assets/images/photos/troubleshooting.jpg");
+}
+
+.alliance {
+  background-image: url("../assets/images/photos/254alliance.jpg");
+}
+
+.mentors-img {
+  background-image: url("../assets/images/photos/mentors.jpg");
+}
+
+.leadership-table {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.leadership-table div {
+  margin: 40px;
+}
+
+.leadership-table img {
+  border-radius: 1000000px;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.5em;
+}
+
+.mentors {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mentors div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 30px;
+}
+
+.mentors div p {
+  padding: 10px 25px;
+  margin: 0;
+}
+
+.mentors > p {
+  max-width: 500px;
+}
+
+/*# sourceMappingURL=about.css.map */
