@@ -1,0 +1,21 @@
+$phoneQuery: "(max-width: 500px)";
+$desktopQuery: "(min-width: 501px)";
+
+$background1: #ffffff;
+$background2: #f8f8f8;
+$tintColor: #3399E0;
+$footerColor: #eee;
+
+$bodyFont: "Sen", Arial, sans-serif;
+$headerFont: "Cabin Sketch", cursive;
+
+$minWidth: 650px;
+$h1Size: 0.08;
+$h2Size: 0.04;
+$sectionMinPadding: 60px;
+$sectionMaxWidth: 1500px;
+
+$transition: all 0.2s ease;
+$onScrollTransition: opacity 0.5s ease;
+
+$backgroundTint: #00000040;

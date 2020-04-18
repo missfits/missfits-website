@@ -2,30 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <title>Artemis | The Missfits</title>
   <link rel="stylesheet" href="../stylesheets/styles.css" />
-  <link rel="stylesheet" href="../stylesheets/robots.css" />
   <link rel="stylesheet" href="../stylesheets/navbar-and-footer.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Sen:wght@400;700&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/robots.css" />
   <link rel="icon"
         type="image/png"
         href="../assets/images/logos/logo-favicon.png">
   <script src="http://iamdustan.com/smoothscroll/src/smoothscroll.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="../scripts/script.js"></script>
   <script src="https://kit.fontawesome.com/2334ea853d.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="navbar top visible-top">
     <h6><a href="/">The Missfits</a></h6>
-    <nav>
-      <ul>
-        <li><a class="nav-item" href="/#robots">Robots</a></li>
-        <li><a class="nav-item" href="/#sponsors">Sponsors</a></li>
-        <li><a class="nav-item" href="/about.html">About</a></li>
-        <li><a class="nav-item" href="/outreach.html">Outreach</a></li>
-        <li><a class="nav-item" href="/contact.html">Contact</a></li>
-      </ul>
+    <nav class="open">
+      <span class="cls"></span>
+      <span>
+        <ul class="sub-menu">
+          <li><a class="nav-item" href="/#robots">Robots</a></li>
+          <li><a class="nav-item" href="/#sponsors">Sponsors</a></li>
+          <li><a class="nav-item" href="/about.html">About</a></li>
+          <li><a class="nav-item" href="/outreach.html">Outreach</a></li>
+          <li><a class="nav-item" href="/contact.html">Contact</a></li>
+        </ul>
+      </span>
+      <span class="cls"></span>
     </nav>
   </header>
   <div class="header artemis dark">
@@ -71,7 +75,7 @@
             Silicon Valley Regional<i class="fas fa-chevron-right"></i>
           </a></li>
           <li><a href="https://www.thebluealliance.com/event/2017new" target="_blank">
-            Houston Championships: Newton Divison<i class="fas fa-chevron-right"></i>
+            Houston Championships<span>: Newton Divison</span><i class="fas fa-chevron-right"></i>
           </a></li>
         </ul>
       </div>

@@ -1,116 +1,121 @@
-* {
-  box-sizing: border-box;
+@charset "UTF-8";
+input[type=radio], input[type=checkbox] {
+  display: none;
 }
-
-body {
+input[type=radio] + label, input[type=checkbox] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 24px;
+  margin-right: 32px;
+  cursor: pointer;
+  line-height: 16px;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
   font-family: "Sen", Arial, sans-serif;
-  font-size: 1.125em;
-  margin: 0;
-  padding: 0;
-  background-color: #eee;
+  font-size: 16px;
 }
-
-h1 {
-  font-family: "Cabin Sketch", cursive;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 8vw;
+input[type=radio] + label:before, input[type=radio] + label:after, input[type=checkbox] + label:before, input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 16px;
+  height: 16px;
   text-align: center;
-  margin: 0;
+  color: #f5f5f5;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-h2 {
-  font-family: "Cabin Sketch", cursive;
-  font-weight: normal;
-  margin: 0;
-  font-size: 4vw;
+input[type=radio] + label:before {
+  box-shadow: inset 0 0 0 1px #666565, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+input[type=radio] + label:hover {
+  color: #3399E0;
+}
+input[type=radio] + label:hover:before {
+  animation-duration: 0.5s;
+  animation-name: change-size;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
 }
 
-h3 {
-  font-family: "Cabin Sketch", cursive;
-  font-size: 1.25em;
-  font-weight: bold;
-  margin: 0;
+input[type=radio]:checked + label:hover {
+  color: #333333;
+  cursor: default;
+}
+input[type=radio]:checked + label:before {
+  animation-duration: 0.2s;
+  animation-name: select-radio;
+  animation-iteration-count: 1;
+  animation-direction: Normal;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 3px #FFFFFF, inset 0 0 0 16px #3399E0;
 }
 
-h6 {
-  font-family: "Cabin Sketch", cursive;
-}
-
-p {
-  margin: 0;
-}
-
-p a, h3 a {
-  transition: all 0.2s ease;
-  opacity: 1;
-}
-
-p a:hover, h3 a:hover {
-  transition: all 0.2s ease;
-  opacity: 0.6;
-}
-
-.dark {
-  color: #fff;
-}
-
-.scroll-to-hidden, .hidden-onload {
-  transition: opacity 0.5s ease;
-  opacity: 0;
-}
-
-.scroll-to-shown, .shown-onload {
-  transition: opacity 0.5s ease;
-  opacity: 1;
-}
-
-.delay {
-  transition: opacity 0.5s ease 0.2s;
-}
-
-.section {
-  padding: 60px;
-  width: 100vw;
-  box-sizing: border-box;
-}
-
-.background1 {
-  background-color: #ffffff;
-}
-
-.background2 {
-  background-color: #f8f8f8;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  height: 60vh;
-  width: 100vw;
-  padding: 60px;
-  background-attachment: fixed;
-  background-size: cover;
-  text-align: center;
-}
-
-.background-image {
-  background-attachment: fixed;
-  background-size: cover;
-  height: 500px;
-}
-
-@media (max-width: 650px) {
-  h1 {
-    font-size: 52px;
+@keyframes change-size {
+  from {
+    box-shadow: 0 0 0 0 #3399E0, inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
   }
-
-  h2 {
-    font-size: 26px;
+  to {
+    box-shadow: 0 0 0 1px #3399E0, inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
   }
 }
+@keyframes select-radio {
+  0% {
+    box-shadow: 0 0 0 0 #99D1F7, inset 0 0 0 2px #FFFFFF, inset 0 0 0 3px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  90% {
+    box-shadow: 0 0 0 10px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 2px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  100% {
+    box-shadow: 0 0 0 12px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 3px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+}
+@keyframes select-checkbox {
+  0% {
+    box-shadow: 0 0 0 0 #99D1F7, inset 0 0 0 2px #FFFFFF, inset 0 0 0 3px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  90% {
+    box-shadow: 0 0 0 10px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 0 #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+  100% {
+    box-shadow: 0 0 0 12px #EDF8FF, inset 0 0 0 0 #FFFFFF, inset 0 0 0 1px #3399E0, inset 0 0 0 0 #FFFFFF, inset 0 0 0 16px #3399E0;
+  }
+}
+input[type=checkbox] + label:hover {
+  color: #3399E0;
+}
+input[type=checkbox] + label:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  line-height: 17px;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: inset 0 0 0 1px #666565, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+input[type=checkbox] + label:hover:before {
+  color: #FFFFFF;
+  animation-duration: 0.5s;
+  animation-name: change-size;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 16px #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: #C3C3C3;
+  color: #FFFFFF;
+  animation-duration: 0.2s;
+  animation-name: select-checkbox;
+  animation-iteration-count: 1;
+  animation-direction: Normal;
+  box-shadow: inset 0 0 0 1px #3399E0, inset 0 0 0 0 #FFFFFF, inset 0 0 0 16px #3399E0;
+}
+
 .contact {
   background-image: linear-gradient(#00000040, #00000040), url("../assets/images/banners/contact-background.jpg");
   background-position: bottom;
@@ -119,17 +124,31 @@ p a:hover, h3 a:hover {
 .section {
   text-align: center;
 }
-
 .section div {
   display: flex;
   flex-direction: row;
   text-align: left;
 }
+@media (max-width: 500px) {
+  .section div {
+    flex-direction: column;
+  }
+}
+@media (min-width: 501px) {
+  .section .outreach-app {
+    flex-direction: row-reverse !important;
+  }
+}
 
 .column {
   flex: 1;
-  padding: 20px;
   flex-direction: column !important;
+  padding: 20px;
+}
+@media (max-width: 500px) {
+  .column {
+    padding: 20px 0;
+  }
 }
 
 legend {
@@ -169,10 +188,17 @@ input[type=submit] {
   margin-left: 20px;
   border-radius: 5px;
 }
-
-input[type=submit]:hover {
-  transition: all 0.2s ease;
-  background-color: #3399E0;
+@media (min-width: 501px) {
+  input[type=submit]:hover {
+    transition: all 0.2s ease;
+    background-color: #3399E0;
+  }
+}
+@media (max-width: 500px) {
+  input[type=submit]:active {
+    transition: all 0.2s ease;
+    background-color: #3399E0;
+  }
 }
 
 textarea {
@@ -194,11 +220,9 @@ textarea {
   margin-right: 10px;
   flex: 1;
 }
-
 .input-div input {
   flex: 1;
 }
-
 .input-div textarea {
   flex: 1;
 }
@@ -217,7 +241,6 @@ textarea {
 .input-div > input[type=text]:focus + .underline {
   transform: scaleX(1);
 }
-
 .input-div > textarea:focus + .underline {
   transform: scaleX(1);
 }

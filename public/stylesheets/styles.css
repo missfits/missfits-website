@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Sen:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -8,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #eee;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -18,12 +20,27 @@ h1 {
   text-align: center;
   margin: 0;
 }
+@media (max-width: 650px) {
+  h1 {
+    font-size: 52px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 13vw;
+  }
+}
 
 h2 {
   font-family: "Cabin Sketch", cursive;
   font-weight: normal;
   margin: 0;
   font-size: 4vw;
+}
+@media (max-width: 650px) {
+  h2 {
+    font-size: 26px;
+  }
 }
 
 h3 {
@@ -70,9 +87,18 @@ p a:hover, h3 a:hover {
 }
 
 .section {
-  padding: 60px calc((50vw - 750px)) !important;
+  padding: 60px;
   width: 100vw;
-  box-sizing: border-box;
+}
+@media (min-width: 1620px) {
+  .section {
+    padding: 60px calc(50vw - 750px);
+  }
+}
+@media (max-width: 500px) {
+  .section {
+    padding: 30px;
+  }
 }
 
 .background1 {
@@ -95,25 +121,21 @@ p a:hover, h3 a:hover {
   background-size: cover;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .header {
+    padding: 30px;
+    background-attachment: scroll;
+  }
+}
 
 .background-image {
   background-attachment: fixed;
   background-size: cover;
   height: 500px;
 }
-
-@media (max-width: 650px) {
-  h1 {
-    font-size: 52px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-}
-@media (max-width: 1120px) {
-  .section {
-    padding: 60px;
+@media (max-width: 500px) {
+  .background-image {
+    background-attachment: scroll;
   }
 }
 

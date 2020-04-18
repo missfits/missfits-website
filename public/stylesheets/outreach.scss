@@ -1,11 +1,11 @@
-@use "styles";
+@use "variables";
 
 $bannerImg: url("../assets/images/banners/outreach-background.JPG");
 $missfitsMissionHomeImg: url("../assets/images/photos/missfits-mission-home.jpg");
 $lunchImg: url("../assets/images/photos/lunch.jpg");
 
 .outreach {
-  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $bannerImg;
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), $bannerImg;
   background-position: bottom;
 }
 
@@ -16,6 +16,7 @@ $lunchImg: url("../assets/images/photos/lunch.jpg");
 
 .missfits-mission-home-img {
   background-image: $missfitsMissionHomeImg;
+  background-position: center;
 }
 
 .lunch {

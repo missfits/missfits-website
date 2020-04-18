@@ -1,59 +1,53 @@
-$background1: #ffffff;
-$background2: #f8f8f8;
-$tintColor: #3399E0;
-$footerColor: #eee;
-
-$bodyFont: "Sen", Arial, sans-serif;
-$headerFont: "Cabin Sketch", cursive;
-
-$minWidth: 650px;
-$h1Size: 0.08;
-$h2Size: 0.04;
-$sectionMinPadding: 60px;
-$sectionMaxWidth: 1500px;
-
-$transition: all 0.2s ease;
-$onScrollTransition: opacity 0.5s ease;
-
-$backgroundTint: #00000040;
+@use "variables";
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Sen:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: $bodyFont;
+  font-family: variables.$bodyFont;
   font-size: 1.125em;
   margin: 0;
   padding: 0;
-  background-color: $footerColor;
+  background-color: variables.$footerColor;
+  overflow-x: hidden;
 }
 
 h1 {
-  font-family: $headerFont;
+  font-family: variables.$headerFont;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: $h1Size * 100vw;
+  font-size: variables.$h1Size * 100vw;
   text-align: center;
   margin: 0;
+  @media (max-width: variables.$minWidth) {
+    font-size: variables.$minWidth * variables.$h1Size;
+  }
+  @media #{variables.$phoneQuery} {
+    font-size: 13vw;
+  }
 }
 
 h2 {
-  font-family: $headerFont;
+  font-family: variables.$headerFont;
   font-weight: normal;
   margin: 0;
-  font-size: $h2Size * 100vw;
+  font-size: variables.$h2Size * 100vw;
+  @media (max-width: variables.$minWidth) {
+    font-size: variables.$minWidth * variables.$h2Size;
+  }
 }
 
 h3 {
-  font-family: $headerFont;
+  font-family: variables.$headerFont;
   font-size: 1.25em;
   font-weight: bold;
   margin: 0;
 }
 
 h6 {
-  font-family: $headerFont;
+  font-family: variables.$headerFont;
 }
 
 p {
@@ -61,12 +55,12 @@ p {
 }
 
 p a, h3 a {
-  transition: $transition;
+  transition: variables.$transition;
   opacity: 1;
 }
 
 p a:hover, h3 a:hover {
-  transition: $transition;
+  transition: variables.$transition;
   opacity: 0.6;
 }
 
@@ -75,31 +69,36 @@ p a:hover, h3 a:hover {
 }
 
 .scroll-to-hidden, .hidden-onload {
-  transition: $onScrollTransition;
+  transition: variables.$onScrollTransition;
   opacity: 0;
 }
 
 .scroll-to-shown, .shown-onload {
-  transition: $onScrollTransition;
+  transition: variables.$onScrollTransition;
   opacity: 1;
 }
 
 .delay {
-  transition: $onScrollTransition 0.2s;
+  transition: variables.$onScrollTransition 0.2s;
 }
 
 .section {
-  padding: $sectionMinPadding calc((50vw - #{$sectionMaxWidth / 2.0})) !important;
+  padding: variables.$sectionMinPadding;
   width: 100vw;
-  box-sizing: border-box;
+  @media (min-width: (variables.$sectionMaxWidth + 2 * variables.$sectionMinPadding)) {
+    padding: variables.$sectionMinPadding calc(50vw - #{variables.$sectionMaxWidth / 2.0});
+  }
+  @media #{variables.$phoneQuery} {
+    padding: 30px;
+  }
 }
 
 .background1 {
-  background-color: $background1;
+  background-color: variables.$background1;
 }
 
 .background2 {
-  background-color: $background2;
+  background-color: variables.$background2;
 }
 
 .header {
@@ -113,26 +112,17 @@ p a:hover, h3 a:hover {
   background-attachment: fixed;
   background-size: cover;
   text-align: center;
+  @media #{variables.$phoneQuery} {
+    padding: 30px;
+    background-attachment: scroll;
+  }
 }
 
 .background-image {
   background-attachment: fixed;
   background-size: cover;
   height: 500px;
-}
-
-@media (max-width: $minWidth) {
-  h1 {
-    font-size: $minWidth * $h1Size;
-  }
-
-  h2 {
-    font-size: $minWidth * $h2Size;
-  }
-}
-
-@media (max-width: 1120px) {
-  .section {
-    padding: $sectionMinPadding;
+  @media #{variables.$phoneQuery} {
+    background-attachment: scroll;
   }
 }

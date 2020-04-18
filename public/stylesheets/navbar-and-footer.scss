@@ -1,7 +1,8 @@
-@use "styles";
+@use "variables";
+@use "hamburger";
 
 .navbar {
-  transition: styles.$transition;
+  transition: variables.$transition;
   position: fixed;
   display: flex;
   width: 100vw;
@@ -9,83 +10,98 @@
   align-items: center;
   padding: 20px 30px;
   z-index: 10000;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-}
-
-.navbar li {
-  padding: 0 35px;
-}
-
-.navbar h6 {
-  font-size: 24px;
-  transition: styles.$transition;
-  margin: 0;
-  opacity: 1;
-}
-
-.navbar h6 a {
-  color: unset;
-  text-decoration: none;
-}
-
-.navbar h6:hover {
-  transition: styles.$transition;
-  opacity: 0.5;
+  @media #{variables.$phoneQuery} {
+    justify-content: center;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    @media #{variables.$phoneQuery} {
+      flex-direction: column;
+    }
+    li {
+      padding: 0 35px;
+      @media #{variables.$phoneQuery} {
+        padding: 0;
+      }
+    }
+  }
+  h6 {
+    font-size: 24px;
+    transition: variables.$transition;
+    margin: 0;
+    opacity: 1;
+    @media #{variables.$phoneQuery} {
+      font-size: 32px;
+    }
+    &:hover {
+      transition: variables.$transition;
+      opacity: 0.5;
+    }
+  }
+  a {
+    color: unset;
+    text-decoration: none;
+  }
 }
 
 .nav-item {
+  transition: variables.$transition;
   font-size: 16px;
   position: relative;
   text-decoration: none;
   color: unset;
   cursor: pointer;
-}
-
-.top .nav-item:before {
-  background-color: #fff;
-}
-
-.nav-item:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.1s ease-in-out 0s;
-  transition: all 0.1s ease-in-out 0s;
-  background-color: #000;
-}
-
-.nav-item:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
+    background-color: #000;
+  }
+  &:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    @media #{variables.$phoneQuery} {
+      transform: scaleX(0);
+      -webkit-transform: scaleX(0);
+      visibility: hidden;
+    }
+  }
+  @media #{variables.$phoneQuery} {
+    text-align: right;
+    &:active {
+      transition: variables.$transition;
+      opacity: 0.6;
+    }
+  }
 }
 
 .top {
   background-color: transparent;
   color: #fff;
   box-shadow: none;
-}
-
-.top h6 {
-  transition: styles.$transition;
-  opacity: 0;
-  transform: translateY(20px);
-  color: #000;
-  cursor: default;
-}
-
-.top h6:hover {
-  opacity: 0;
+  .nav-item:before {
+    background-color: #fff;
+  }
+  h6 {
+    transition: variables.$transition;
+    opacity: 0;
+    transform: translateY(20px);
+    color: #000;
+    cursor: default;
+    &:hover {
+      opacity: 0;
+    }
+  }
 }
 
 .visible-top h6 {
@@ -93,54 +109,62 @@
   transform: translateY(0px);
   cursor: pointer;
   color: #fff;
-}
-
-.visible-top h6:hover {
-  opacity: 0.5;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .scrolling {
   background-color: #fff;
   color: #000;
   box-shadow: 0 2px 5px #0006;
-}
-
-.scrolling h6 {
-  transition: styles.$transition;
-  opacity: 1;
-  transform: translateY(0);
-  color: #000;
-  cursor: pointer;
-}
-
-.media-icons {
-  text-align: center;
-}
-
-.media-icons a {
-  transition: styles.$transition;
-  font-size: 30px;
-  padding: 10px;
-  text-decoration: none;
-  color: unset;
-  opacity: 1;
-}
-
-.media-icons a:hover {
-  transition: styles.$transition;
-  opacity: 0.6;
-}
-
-.media-icons a i {
-  transition: styles.$transition;
-}
-
-.media-icons a:hover i {
-  transition: styles.$transition;
-  transform: scale(1.1);
+  h6 {
+    transition: variables.$transition;
+    opacity: 1;
+    transform: translateY(0);
+    color: #000;
+    cursor: pointer;
+  }
 }
 
 footer {
-  background-color: styles.$footerColor;
+  background-color: variables.$footerColor;
   padding: 60px;
+  @media #{variables.$phoneQuery} {
+    padding: 60px 20px;
+  }
+  .media-icons {
+    text-align: center;
+    a {
+      transition: variables.$transition;
+      font-size: 30px;
+      padding: 10px;
+      text-decoration: none;
+      color: unset;
+      opacity: 1;
+      @media #{variables.$desktopQuery} {
+        &:hover {
+          transition: variables.$transition;
+          opacity: 0.6;
+        }
+        &:hover i {
+          transition: variables.$transition;
+          transform: scale(1.1);
+        }
+      }
+      @media #{variables.$phoneQuery} {
+        &:active {
+          transition: variables.$transition;
+          opacity: 0.6;
+        }
+        &:active i {
+          transition: variables.$transition;
+          transform: scale(1.1);
+        }
+      }
+      i {
+        transition: variables.$transition;
+      }
+    }
+  }
 }

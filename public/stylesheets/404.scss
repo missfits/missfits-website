@@ -1,25 +1,34 @@
+@use "variables";
+
 $maxWidth: 1000px;
 $standardWidth: 0.65;
 
-body {
-}
-
 .page-not-found {
-  width: $standardWidth * 100vw;
+  width: 100vw;
   height: 100vh;
-  flex: 1;
+  padding: 0 ((1 - $standardWidth) * 100vw);
+  background-color: #eee;
   display: flex;
-  text-align: center;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 75px;
-  margin-left: (1 - $standardWidth) / 2 * 100vw;
-}
-
-@media (min-width: $maxWidth / $standardWidth) {
-  .page-not-found {
-    width: $maxWidth;
-    margin-left: calc((100vw - #{$maxWidth}) / 2.0);
+  @media (min-width: $maxWidth / $standardWidth) {
+    padding: 0 calc((100vw - #{$maxWidth}) / 2.0 );
+  }
+  @media #{variables.$phoneQuery} {
+    padding: 20vh 7.5vw;
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+  div {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 75px;
+    @media #{variables.$phoneQuery} {
+      padding: 30px;
+    }
   }
 }

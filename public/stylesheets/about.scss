@@ -1,4 +1,4 @@
-@use "styles";
+@use "variables";
 
 $bannerImg: url("../assets/images/banners/about-background.jpg");
 $troubleshootingImg: url("../assets/images/photos/troubleshooting.jpg");
@@ -6,7 +6,8 @@ $allianceImg: url("../assets/images/photos/254alliance.jpg");
 $mentorsImg: url("../assets/images/photos/mentors.jpg");
 
 .about {
-  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $bannerImg;
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), $bannerImg;
+  background-position: center;
 }
 
 .first {
@@ -27,11 +28,14 @@ $mentorsImg: url("../assets/images/photos/mentors.jpg");
   justify-content: center;
   flex-direction: row;
   align-items: center;
-}
-
-.about-summary p {
-  margin: 15px;
-  flex: 1
+  @media #{variables.$phoneQuery} {
+    flex-direction: column;
+    text-align: center;
+  }
+  p {
+    margin: 15px;
+    flex: 1
+  }
 }
 
 .troubleshooting {
@@ -40,6 +44,7 @@ $mentorsImg: url("../assets/images/photos/mentors.jpg");
 
 .alliance {
   background-image: $allianceImg;
+  background-position: right;
 }
 
 .mentors-img {

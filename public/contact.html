@@ -2,31 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <title>Contact | The Missfits</title>
   <link rel="stylesheet" href="stylesheets/styles.css" />
-  <link rel="stylesheet" href="stylesheets/contact.css" />
   <link rel="stylesheet" href="stylesheets/navbar-and-footer.css" />
-  <link rel="stylesheet" href="stylesheets/form-animations.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Sen:wght@400;700&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/contact.css" />
   <link rel="icon"
         type="image/png"
         href="assets/images/logos/logo-favicon.png">
   <script src="http://iamdustan.com/smoothscroll/src/smoothscroll.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="scripts/script.js"></script>
   <script src="https://kit.fontawesome.com/2334ea853d.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="navbar top visible-top">
     <h6><a href="/">The Missfits</a></h6>
-    <nav>
-      <ul>
-        <li><a class="nav-item" href="/#robots">Robots</a></li>
-        <li><a class="nav-item" href="/#sponsors">Sponsors</a></li>
-        <li><a class="nav-item" href="/about.html">About</a></li>
-        <li><a class="nav-item" href="/outreach.html">Outreach</a></li>
-        <li><a class="nav-item" href="/contact.html" onclick="return scrollToTop()">Contact</a></li>
-      </ul>
+    <nav class="open">
+      <span class="cls"></span>
+      <span>
+        <ul class="sub-menu">
+          <li><a class="nav-item" href="/#robots">Robots</a></li>
+          <li><a class="nav-item" href="/#sponsors">Sponsors</a></li>
+          <li><a class="nav-item" href="/about.html">About</a></li>
+          <li><a class="nav-item" href="/outreach.html">Outreach</a></li>
+          <li><a class="nav-item" href="/contact.html" onclick="return scrollToTop()">Contact</a></li>
+        </ul>
+      </span>
+      <span class="cls"></span>
     </nav>
   </header>
   <div class="header dark contact">
@@ -139,8 +142,17 @@
     </div>
   </div>
   <div class="section background2">
-    <h1>Demo/Workshop Application</h1>
-    <div>
+    <h1>Outreach Application</h1>
+    <div class="outreach-app">
+      <div class="column">
+        <p>
+          Part of our mission as an all-girls FIRST Robotics team is to help spread awareness of STEM to kids in the Bay
+          Area and around the world. If you are a middle school class or club that would benefit from a robotics-related
+          workshop or simply want to get in touch with us, please complete this contact form and we will get in touch with
+          you.
+        </p>
+        <img src="assets/images/photos/fsk-maker-faire.JPG" alt="Francis Scott Key Maker Faire, 2018" class="img" />
+      </div>
       <form class="column" onsubmit="return onDemoFormSubmit(this)">
         <fieldset>
           <legend>Name <span class="required">*</span></legend>
@@ -172,7 +184,7 @@
           <legend>Comments</legend>
           <div class="fieldset-inputs">
             <div class="input-div">
-              <label class="hidden-label" for="comments">Comments</label>
+              <label class="hidden-label" for="comments-demo">Comments</label>
               <textarea id="comments-demo"
                         class="large-textarea"
                         name="comments"
@@ -183,15 +195,6 @@
         </fieldset>
         <input type="submit" value="Send">
       </form>
-      <div class="column">
-        <p>
-          Part of our mission as an all-girls FIRST Robotics team is to help spread awareness of STEM to kids in the Bay
-          Area and around the world. If you are a middle school class or club that would benefit from a robotics-related
-          workshop or simply want to get in touch with us, please complete this contact form and we will get in touch with
-          you.
-        </p>
-        <img src="assets/images/photos/fsk-maker-faire.JPG" alt="Francis Scott Key Maker Faire, 2018" class="img" />
-      </div>
     </div>
   </div>
   <footer>

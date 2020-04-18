@@ -1,4 +1,4 @@
-@use "styles";
+@use "variables";
 
 $erisImg: url("../assets/images/banners/eris-background.jpg");
 $athenaImg: url("../assets/images/banners/athena-background.JPG");
@@ -9,106 +9,136 @@ $artemisImg: url("../assets/images/banners/artemis-background.jpeg");
 }
 
 .eris {
-  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $erisImg;
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), $erisImg;
 }
 
 .athena {
-  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $athenaImg;
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), $athenaImg;
 }
 
 .artemis {
-  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $artemisImg;
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), $artemisImg;
 }
 
 .challenge {
   display: flex;
   flex-direction: row;
-}
-
-.challenge h2 {
-  margin-bottom: 20px;
-}
-
-.challenge iframe {
-  width: 50vw;
-  height: 100%;
-  margin-left: 50px;
-  border: none;
+  @media #{variables.$phoneQuery} {
+    flex-direction: column;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  iframe {
+    width: 50vw;
+    max-width: variables.$sectionMaxWidth / 2;
+    height: 100%;
+    border: none;
+    @media #{variables.$desktopQuery} {
+      margin-left: 50px;
+    }
+    @media #{variables.$phoneQuery} {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
 }
 
 .robot-row {
   display: flex;
-  flex-direction: row;
   align-items: center;
-}
-
-.robot-row img {
-  margin-bottom: 20px;
-  width: 30vw;
-  height: fit-content;
-}
-
-.robot-row div {
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-}
-
-.robot-row h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.robot-row ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.tech-binder-button {
-  transition: styles.$transition;
-  text-decoration: none;
-  padding: 10px;
-  background-color: #fff;
-  color: unset;
-  border-radius: 5px;
-  align-self: center;
-}
-
-.fas {
-  transition: styles.$transition;
-  margin-left: 10px;
-}
-
-.tech-binder-button:hover {
-  transition: styles.$transition;
-  box-shadow: 0 0 10px 3px #0001;
-}
-
-.tech-binder-button:hover .fa-download {
-  transition: styles.$transition;
-  transform: translateY(3px);
-}
-
-.competition-schedule li {
-  list-style-type: none;
-  margin: 15px 0 25px 0;
-}
-
-.competition-schedule a {
-  transition: styles.$transition;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  color: unset;
-  text-decoration: none;
-}
-
-.competition-schedule a:hover {
-  transition: styles.$transition;
-  box-shadow: 0 0 10px 3px #0001;
-}
-
-.competition-schedule a:hover .fa-chevron-right {
-  transform: translateX(3px);
+  @media #{variables.$phoneQuery} {
+    flex-direction: column;
+  }
+  img {
+    @media #{variables.$desktopQuery} {
+      width: 30vw;
+      margin-bottom: 20px;
+    }
+    @media #{variables.$phoneQuery} {
+      width: 75vw;
+    }
+  }
+  div {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .fas {
+    transition: variables.$transition;
+    margin-left: 10px;
+  }
+  .tech-binder-button {
+    transition: variables.$transition;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #fff;
+    color: unset;
+    border-radius: 5px;
+    align-self: center;
+    @media #{variables.$desktopQuery} {
+      &:hover {
+        transition: variables.$transition;
+        box-shadow: 0 0 10px 3px #0001;
+        .fa-download {
+          transition: variables.$transition;
+          transform: translateY(3px);
+        }
+      }
+    }
+    @media #{variables.$phoneQuery} {
+      &:active {
+        transition: variables.$transition;
+        box-shadow: 0 0 10px 3px #0001;
+        .fa-download {
+          transition: variables.$transition;
+          transform: translateY(3px);
+        }
+      }
+    }
+  }
+  .competition-schedule {
+    li {
+      list-style-type: none;
+      margin: 15px 0 25px 0;
+      a {
+        transition: variables.$transition;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        color: unset;
+        text-decoration: none;
+        @media #{variables.$desktopQuery} {
+          &:hover {
+            transition: variables.$transition;
+            box-shadow: 0 0 10px 3px #0001;
+            .fa-chevron-right {
+              transform: translateX(3px);
+            }
+          }
+        }
+        @media #{variables.$phoneQuery} {
+          span {
+            display: none;
+          }
+          &:active {
+            transition: variables.$transition;
+            box-shadow: 0 0 10px 3px #0001;
+            .fa-chevron-right {
+              transform: translateX(3px);
+            }
+          }
+        }
+      }
+    }
+  }
 }

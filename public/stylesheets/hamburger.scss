@@ -1,0 +1,135 @@
+@use "variables";
+
+.cls {
+  display: none;
+  @media #{variables.$phoneQuery} {
+    display: block
+  }
+}
+
+.open {
+  @media #{variables.$phoneQuery} {
+    position: fixed;
+    top: 13px;
+    right: 20px;
+    width: 40px;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+    &:active {
+      opacity: 0.8;
+    }
+    span {
+      pointer-events: all;
+      display: block;
+      float: left;
+      clear: both;
+      height: 4px;
+      width: 30px;
+      border-radius: 40px;
+      background-color: #fff;
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      &:nth-child(1) {
+        margin-top: 10px;
+        z-index: 9;
+      }
+      &:nth-child(2) {
+        margin-top: 20px;
+      }
+      &:nth-child(3) {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.scrolling span {
+  background-color: #000;
+}
+
+.sub-menu {
+  @media #{variables.$phoneQuery} {
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background-color: #fff8;
+    border-radius: 50%;
+    z-index: 18;
+    overflow: hidden;
+    li {
+      display: block;
+      float: right;
+      clear: both;
+      height: auto;
+      margin-right: -160px;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      &:first-child{
+        margin-top: 130px;
+      }
+      &:nth-child(1){
+        -webkit-transition-delay: 0.05s;
+      }
+      &:nth-child(2){
+        -webkit-transition-delay: 0.10s;
+      }
+      &:nth-child(3){
+        -webkit-transition-delay: 0.15s;
+      }
+      &:nth-child(4){
+        -webkit-transition-delay: 0.20s;
+      }
+      &:nth-child(5){
+        -webkit-transition-delay: 0.25s;
+      }
+      a {
+        color: #000;
+        width: 100%;
+        display: block;
+        float: left;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+.oppenned {
+  @media #{variables.$phoneQuery} {
+    .sub-menu {
+      opacity: 1;
+      height: 400px;
+      width: 400px;
+    }
+    span:nth-child(2) {
+      overflow: visible;
+    }
+    span:nth-child(1), span:nth-child(3) {
+      background-color: #000;
+      z-index: 100;
+      transform: rotate(45deg);
+    }
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+    span:nth-child(2) {
+      height: 400px;
+      width: 400px;
+      right: -160px;
+      top: -100px;
+      border-radius: 50%;
+      background-color: #fafafa88;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    li {
+      margin-right: 168px;
+    }
+  }
+}

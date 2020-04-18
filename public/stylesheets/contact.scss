@@ -1,27 +1,38 @@
-@use "styles";
+@use "variables";
+@use "form-animations";
 
 $errorColor: #f00a;
 $bannerImg: url("../assets/images/banners/contact-background.jpg");
 
 .contact {
-  background-image: linear-gradient(styles.$backgroundTint, styles.$backgroundTint), $bannerImg;
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), $bannerImg;
   background-position: bottom;
 }
 
 .section {
   text-align: center;
-}
-
-.section div {
-  display: flex;
-  flex-direction: row;
-  text-align: left;
+  div {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    @media #{variables.$phoneQuery} {
+      flex-direction: column;
+    }
+  }
+  .outreach-app {
+    @media #{variables.$desktopQuery} {
+      flex-direction: row-reverse !important;
+    }
+  }
 }
 
 .column {
   flex: 1;
-  padding: 20px;
   flex-direction: column !important;
+  padding: 20px;
+  @media #{variables.$phoneQuery} {
+    padding: 20px 0;
+  }
 }
 
 legend {
@@ -33,7 +44,7 @@ legend {
 }
 
 input[type="text"] {
-  transition: styles.$transition;
+  transition: variables.$transition;
   padding: 10px;
   font-family: "Sen", Arial, sans-serif;
   font-size: 16px;
@@ -44,13 +55,13 @@ input[type="text"] {
 }
 
 .invalid {
-  transition: styles.$transition;
+  transition: variables.$transition;
   border-bottom: 1px solid #f008 !important;
   background-color: #f003 !important;
 }
 
 input[type="submit"] {
-  transition: styles.$transition;
+  transition: variables.$transition;
   border: none;
   font-family: "Cabin Sketch", cursive;
   font-size: 18px;
@@ -60,11 +71,18 @@ input[type="submit"] {
   outline: none;
   margin-left: 20px;
   border-radius: 5px;
-}
-
-input[type="submit"]:hover {
-  transition: styles.$transition;
-  background-color: #3399E0;
+  @media #{variables.$desktopQuery} {
+    &:hover {
+      transition: variables.$transition;
+      background-color: #3399E0;
+    }
+  }
+  @media #{variables.$phoneQuery} {
+    &:active {
+      transition: variables.$transition;
+      background-color: #3399E0;
+    }
+  }
 }
 
 textarea {
@@ -85,33 +103,32 @@ textarea {
   overflow: hidden;
   margin-right: 10px;
   flex: 1;
-}
-
-.input-div input {
-  flex: 1;
-}
-
-.input-div textarea {
-  flex: 1;
+  input {
+    flex: 1;
+  }
+  textarea {
+    flex: 1;
+  }
 }
 
 .underline {
-  transition: styles.$transition;
+  transition: variables.$transition;
   display: inline-block;
   bottom: 0;
   transform: scaleX(0);
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: styles.$tintColor;
+  background-color: variables.$tintColor;
 }
 
-.input-div > input[type="text"]:focus + .underline {
-  transform: scaleX(1);
-}
-
-.input-div > textarea:focus + .underline {
-  transform: scaleX(1);
+.input-div {
+  & > input[type="text"]:focus + .underline {
+    transform: scaleX(1);
+  }
+  & > textarea:focus + .underline {
+    transform: scaleX(1);
+  }
 }
 
 .hidden-label {
@@ -133,7 +150,7 @@ fieldset {
 }
 
 .email-error {
-  transition: styles.$transition;
+  transition: variables.$transition;
   font-size: 12px;
   flex: 1;
   color: $errorColor;
@@ -142,7 +159,7 @@ fieldset {
 }
 
 .error-shown {
-  transition: styles.$transition;
+  transition: variables.$transition;
   transform: scaleY(1);
 }
 

@@ -4,11 +4,10 @@ function toggleHeader() {
   if (navBar.classList.contains("no-scroll")) {
     return;
   }
-  if (scrollPos === 0 && navBar.classList.contains("scrolling")) {
+  if (scrollPos <= 0 && navBar.classList.contains("scrolling")) {
     navBar.classList.remove("scrolling");
     navBar.classList.add("top");
-  }
-  if (scrollPos !== 0 && navBar.classList.contains("top")) {
+  } else if (scrollPos > 0 && navBar.classList.contains("top")) {
     navBar.classList.remove("top");
     navBar.classList.add("scrolling");
   }
@@ -63,6 +62,7 @@ function showOnLoad() {
 }
 
 function scrollListener() {
+  $('.open').removeClass("oppenned");
   toggleHeader();
   showOnScroll();
 }
@@ -73,10 +73,27 @@ function checkSection() {
   }
 }
 
+function toggleNavbar() {
+  $(document).ready(function() {
+    $(document).delegate('.open', 'click', function(event){
+      $(this).addClass('oppenned');
+      event.stopPropagation();
+    });
+    $(document).delegate('body', 'click', function(event) {
+      $('.open').removeClass('oppenned');
+    });
+    $(document).delegate('.cls', 'click', function(event){
+      $('.open').removeClass('oppenned');
+      event.stopPropagation();
+    });
+  });
+}
+
 window.addEventListener("scroll", scrollListener);
 
 window.onload = function() {
   scrollListener();
   showOnLoad();
   checkSection();
+  toggleNavbar();
 };
