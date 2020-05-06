@@ -96,6 +96,9 @@
     transition: variables.$transition;
     opacity: 0;
     transform: translateY(20px);
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
     color: #000;
     cursor: default;
     &:hover {
@@ -109,6 +112,9 @@
   transform: translateY(0px);
   cursor: pointer;
   color: #fff;
+  -webkit-user-select: text;
+  user-select: text;
+  pointer-events: all;
   &:hover {
     opacity: 0.5;
   }
@@ -124,6 +130,9 @@
     transform: translateY(0);
     color: #000;
     cursor: pointer;
+    -webkit-user-select: text;
+    user-select: text;
+    pointer-events: all;
   }
 }
 
@@ -167,4 +176,18 @@ footer {
       }
     }
   }
+}
+
+.clickable-area {
+  pointer-events: all;
+  display: block;
+  float: left;
+  clear: both;
+  height: 44px;
+  width: 50px;
+  opacity: 0;
+  position: absolute;
+  right: -7px;
+  top: 3px;
+  z-index: 1000;
 }

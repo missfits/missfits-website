@@ -62,7 +62,7 @@ function showOnLoad() {
 }
 
 function scrollListener() {
-  $('.open').removeClass("oppenned");
+  toggleNavbar($(".clickable-area"), "CLOSE");
   toggleHeader();
   showOnScroll();
 }
@@ -73,21 +73,31 @@ function checkSection() {
   }
 }
 
-function toggleNavbar() {
+// toggleType can be: "OPEN", "CLOSE", "TOGGLE"
+function toggleNavbar(clickableArea, toggleType) {
+  if (clickableArea.hasClass("opened") && (toggleType === "CLOSE" || toggleType === "TOGGLE")) {
+    $(".open").removeClass("oppenned");
+    clickableArea.removeClass("opened");
+  } else if (toggleType === "OPEN" || toggleType === "TOGGLE") {
+    $(".open").addClass("oppenned");
+    clickableArea.addClass("opened");
+  }
+}
+
+function toggleNavbarListener() {
   $(document).ready(function() {
-    $(document).delegate('.open', 'click', function(event){
-      $(this).addClass('oppenned');
+    $(document).delegate(".clickable-area", "click", function(event) {
+      toggleNavbar($(this), "TOGGLE");
       event.stopPropagation();
     });
-    $(document).delegate('body', 'click', function(event) {
-      $('.open').removeClass('oppenned');
-    });
-    $(document).delegate('.cls', 'click', function(event){
-      $('.open').removeClass('oppenned');
+    $(document).delegate("body", "click", function(event) {
+      toggleNavbar($(".clickable-area"), "CLOSE");
       event.stopPropagation();
     });
   });
 }
+
+document.cookie = 'SameSite=None; Secure';
 
 window.addEventListener("scroll", scrollListener);
 
@@ -95,5 +105,5 @@ window.onload = function() {
   scrollListener();
   showOnLoad();
   checkSection();
-  toggleNavbar();
+  toggleNavbarListener();
 };

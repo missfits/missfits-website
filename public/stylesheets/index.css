@@ -1,6 +1,6 @@
 .home {
   height: 100vh !important;
-  background-image: linear-gradient(#1574b6a6, #1574b6a6), url("../assets/images/banners/home-background-2.jpg");
+  background-image: linear-gradient(#1574b6a6, #1574b6a6), url("../assets/images/banners/home-background.JPG");
   background-position: center;
   text-align: left !important;
 }

@@ -3,7 +3,7 @@
 .cls {
   display: none;
   @media #{variables.$phoneQuery} {
-    display: block
+    display: block;
   }
 }
 

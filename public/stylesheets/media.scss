@@ -1,0 +1,150 @@
+@use "variables";
+
+.media {
+  background-image: url("/assets/images/banners/media-background.jpg");
+  background-position: bottom;
+}
+
+.album-top {
+  color: #000;
+  h6 {
+    color: #000;
+  }
+  .nav-item:before {
+    background-color: #000;
+  }
+}
+
+.section {
+  padding: 120px;
+}
+
+.year {
+  padding-top: 20px;
+  h2 {
+    margin-left: 20px;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    iframe, a {
+      width: 300px;
+      height: 250px;
+      margin: 20px;
+    }
+    iframe {
+      border: none;
+    }
+    a {
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      cursor: pointer;
+      text-decoration: none;
+      div {
+        transition: variables.$transition;
+        flex: 1;
+        background-color: #0000;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        .fas {
+          transition: variables.$transition;
+          font-size: 48px;
+          margin-top: 71px;
+        }
+      }
+      &:hover {
+        div {
+          transition: variables.$transition;
+          background-color: #0008;
+          .fas {
+            transition: variables.$transition;
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.photo-album {
+  padding: 120px;
+  div {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      object-fit: contain;
+      width: 300px;
+      height: 250px;
+      margin: 20px;
+    }
+  }
+}
+
+.kickoff-2019 {
+  background-image: url("/assets/images/photo-albums/2019-kickoff.JPG");
+}
+
+.build-season-2019 {
+  background-image: url("/assets/images/photo-albums/2019-build-season.JPG");
+}
+
+.fsk-2019 {
+  background-image: url("/assets/images/photo-albums/2019-fsk-maker-faire.jpg");
+}
+
+.sfr-2019 {
+  background-image: url("/assets/images/photo-albums/2019-sfr.JPG");
+}
+
+.svr-2019 {
+  background-image: url("/assets/images/photo-albums/2019-svr.JPG");
+}
+
+.houston-2019 {
+  background-image: url("/assets/images/photo-albums/2019-houston.JPG");
+}
+
+.kickoff-2018 {
+  background-image: url("/assets/images/photo-albums/2018-kickoff.JPG");
+}
+
+.build-season-2018 {
+  background-image: url("/assets/images/photo-albums/2018-build-season.JPG");
+}
+
+.fsk-2018 {
+  background-image: url("/assets/images/photo-albums/2018-fsk-maker-faire.JPG");
+}
+
+.sfr-2018 {
+  background-image: url("/assets/images/photo-albums/2018-sfr.jpeg");
+}
+
+.svr-2018 {
+  background-image: url("/assets/images/photo-albums/2018-svr.jpg");
+}
+
+.build-season-2017 {
+  background-image: url("/assets/images/photo-albums/2018-build-season.JPG");
+}
+
+.outreach-2017 {
+  background-image: url("/assets/images/photo-albums/2017-outreach.JPG");
+}
+
+.sfr-2017 {
+  background-image: url("/assets/images/photo-albums/2017-sfr.JPG");
+}
