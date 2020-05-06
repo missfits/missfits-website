@@ -61,6 +61,8 @@ p {
 p a, h3 a {
   transition: all 0.2s ease;
   opacity: 1;
+  color: #3399E0;
+  text-decoration: none;
 }
 
 p a:hover, h3 a:hover {

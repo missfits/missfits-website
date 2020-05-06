@@ -1,7 +1,7 @@
 @use "variables";
 
 .media {
-  background-image: url("/assets/images/banners/media-background.jpg");
+  background-image: linear-gradient(variables.$backgroundTint, variables.$backgroundTint), url("/assets/images/banners/media-background.jpg");
   background-position: bottom;
 }
 

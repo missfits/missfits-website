@@ -57,6 +57,8 @@ p {
 p a, h3 a {
   transition: variables.$transition;
   opacity: 1;
+  color: variables.$tintColor;
+  text-decoration: none;
 }
 
 p a:hover, h3 a:hover {
