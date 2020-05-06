@@ -16,6 +16,11 @@
 .section {
   padding: 120px;
 }
+@media (max-width: 500px) {
+  .section {
+    padding: 60px 0;
+  }
+}
 
 .year {
   padding-top: 20px;
@@ -23,11 +28,23 @@
 .year h2 {
   margin-left: 20px;
 }
+@media (max-width: 500px) {
+  .year h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+}
 .year div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
+}
+@media (max-width: 500px) {
+  .year div {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .year div iframe, .year div a {
   width: 300px;
