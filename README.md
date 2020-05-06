@@ -4,7 +4,9 @@ Missfits Website
 This is the code for the [official website](https://team6418.org) for the Missfits (FRC Team 6418). It uses
 [Firebase](https://firebase.google.com) for hosting, functions, and image & data storage,
 [FontAwesome](https://fontawesome.com) for vector icons, and [Google Fonts](https://fonts.google.com) for fonts Cabin
-Sketch and Sen.
+Sketch and Sen. Dustan Kastan's [smoothscroll](https://github.com/iamdustan/smoothscroll) is implemented to enable
+smooth scrolling in Safari (which currently does not support `window.scrollTo(props)`). Scripts are written in pure JS
+and JQuery.
 
 Navigation Bar
 --------------
@@ -59,5 +61,6 @@ Contact (Firebase)
 ------------------
 
 The contact form sends its data to Firebase, which will then send an email to
-[missfitsrobotics@gmail.com](mailto:missfitsrobotics@gmail.com) (soon to be implemented using Firebase functions),
+[missfitsrobotics@gmail.com](mailto:missfitsrobotics@gmail.com) or
+[pr.missfitsrobotics@gmail.com](mailto:pr.missfitsrobotics@gmail.com) (soon to be implemented using Firebase functions),
 rather than using the PHP mail function or something similar.
