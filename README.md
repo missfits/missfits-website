@@ -40,7 +40,7 @@ new album, create a section with the following format:
 
 ```html
 <div class="section background1 photo-album">
-    <h1>Build Season 2017</h1>
+    <h1>Title</h1>
     <div id="images"></div>
 </div>
 ```
