@@ -24,6 +24,9 @@ h1 {
   @media (max-width: variables.$minWidth) {
     font-size: variables.$minWidth * variables.$h1Size;
   }
+  @media (min-width: (variables.$sectionMaxWidth + 2 * variables.$sectionMinPadding)) {
+    font-size: (variables.$sectionMaxWidth + 2 * variables.$sectionMinPadding) * variables.$h1Size;
+  }
   @media #{variables.$phoneQuery} {
     font-size: 13vw;
   }
@@ -36,6 +39,9 @@ h2 {
   font-size: variables.$h2Size * 100vw;
   @media (max-width: variables.$minWidth) {
     font-size: variables.$minWidth * variables.$h2Size;
+  }
+  @media (min-width: (variables.$sectionMaxWidth + 2 * variables.$sectionMinPadding)) {
+    font-size: (variables.$sectionMaxWidth + 2 * variables.$sectionMinPadding) * variables.$h2Size;
   }
 }
 

@@ -25,6 +25,11 @@ h1 {
     font-size: 52px;
   }
 }
+@media (min-width: 1620px) {
+  h1 {
+    font-size: 129.6px;
+  }
+}
 @media (max-width: 500px) {
   h1 {
     font-size: 13vw;
@@ -40,6 +45,11 @@ h2 {
 @media (max-width: 650px) {
   h2 {
     font-size: 26px;
+  }
+}
+@media (min-width: 1620px) {
+  h2 {
+    font-size: 64.8px;
   }
 }
 
