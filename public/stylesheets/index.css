@@ -190,4 +190,37 @@
   }
 }
 
+.banner {
+  transition: all 0.2s ease;
+  position: fixed;
+  z-index: 10000;
+  bottom: 0;
+  padding: 60px 40px;
+  background-color: rgba(146, 173, 191, 0.75);
+}
+.banner h3 {
+  margin: 0 0 15px 0;
+  padding: 0;
+  text-align: center;
+}
+.banner a {
+  color: #0074c8;
+}
+.banner .fas {
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 32px;
+}
+.banner .fas:hover {
+  transition: all 0.2s ease;
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.banner.close {
+  transition: all 0.2s ease;
+  transform: translateY(100%);
+}
+
 /*# sourceMappingURL=index.css.map */

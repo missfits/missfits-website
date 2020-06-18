@@ -178,3 +178,36 @@ $bannerImg: url("../assets/images/banners/home-background.JPG");
     }
   }
 }
+
+.banner {
+  transition: variables.$transition;
+  position: fixed;
+  z-index: 10000;
+  bottom: 0;
+  padding: 60px 40px;
+  background-color: rgba(146, 173, 191, 0.75);
+  h3 {
+    margin: 0 0 15px 0;
+    padding: 0;
+    text-align: center;
+  }
+  a {
+    color: #0074c8;
+  }
+  .fas {
+    transition: variables.$transition;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 32px;
+    &:hover {
+      transition: variables.$transition;
+      transform: scale(1.15);
+      cursor: pointer;
+    }
+  }
+  &.close {
+    transition: variables.$transition;
+    transform: translateY(100%);
+  }
+}

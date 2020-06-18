@@ -1,6 +1,6 @@
 function toggleHeader() {
-  let scrollPos = window.scrollY;
-  let navBar = document.getElementsByClassName("navbar")[0];
+  const scrollPos = window.scrollY;
+  const navBar = document.getElementsByClassName("navbar")[0];
   if (navBar.classList.contains("no-scroll")) {
     return;
   }
@@ -95,6 +95,11 @@ function toggleNavbarListener() {
       event.stopPropagation();
     });
   });
+}
+
+function closeBanner() {
+  console.log("hi");
+  $(".banner").addClass("close");
 }
 
 document.cookie = 'SameSite=None; Secure';
