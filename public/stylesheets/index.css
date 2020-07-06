@@ -190,37 +190,64 @@
   }
 }
 
-.banner {
+.banner-wrapper {
+  transition: all 0.2s ease;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100000;
+  background-color: #0008;
+}
+.banner-wrapper .banner {
   transition: all 0.2s ease;
   position: fixed;
-  z-index: 10000;
-  bottom: 0;
   padding: 60px 40px;
-  background-color: rgba(146, 173, 191, 0.75);
+  background-color: #fff;
+  width: 50vw;
+  left: 25vw;
+  max-width: 750px;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: #000 0 0 10px;
 }
-.banner h3 {
+@media (min-width: 1500px) {
+  .banner-wrapper .banner {
+    left: calc(50vw - 375px);
+  }
+}
+@media (max-width: 500px) {
+  .banner-wrapper .banner {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+.banner-wrapper .banner h3 {
   margin: 0 0 15px 0;
   padding: 0;
-  text-align: center;
 }
-.banner a {
+.banner-wrapper .banner a {
   color: #0074c8;
 }
-.banner .fas {
+.banner-wrapper .banner .fas {
   transition: all 0.2s ease;
   position: absolute;
   top: 30px;
   right: 30px;
   font-size: 32px;
 }
-.banner .fas:hover {
+.banner-wrapper .banner .fas:hover {
   transition: all 0.2s ease;
   transform: scale(1.15);
   cursor: pointer;
 }
-.banner.close {
+.banner-wrapper.close {
   transition: all 0.2s ease;
-  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.banner-wrapper.close .banner {
+  transition: all 0.2s ease;
+  transform: scale(0.95);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -179,35 +179,58 @@ $bannerImg: url("../assets/images/banners/home-background.JPG");
   }
 }
 
-.banner {
+.banner-wrapper {
   transition: variables.$transition;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  z-index: 10000;
-  bottom: 0;
-  padding: 60px 40px;
-  background-color: rgba(146, 173, 191, 0.75);
-  h3 {
-    margin: 0 0 15px 0;
-    padding: 0;
-    text-align: center;
-  }
-  a {
-    color: #0074c8;
-  }
-  .fas {
+  z-index: 100000;
+  background-color: #0008;
+  .banner {
     transition: variables.$transition;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 32px;
-    &:hover {
+    position: fixed;
+    padding: 60px 40px;
+    background-color: #fff;
+    width: 50vw;
+    left: 25vw;
+    max-width: 750px;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: #000 0 0 10px;
+    @media (min-width: 1500px) {
+      left: calc(50vw - 375px)
+    }
+    @media #{variables.$phoneQuery} {
+      width: 90vw;
+      left: 5vw;
+    }
+    h3 {
+      margin: 0 0 15px 0;
+      padding: 0;
+    }
+    a {
+      color: #0074c8;
+    }
+    .fas {
       transition: variables.$transition;
-      transform: scale(1.15);
-      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 32px;
+      &:hover {
+        transition: variables.$transition;
+        transform: scale(1.15);
+        cursor: pointer;
+      }
     }
   }
   &.close {
     transition: variables.$transition;
-    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    .banner {
+      transition: variables.$transition;
+      transform: scale(0.95);
+    }
   }
 }

@@ -97,9 +97,15 @@ function toggleNavbarListener() {
   });
 }
 
+function openBanner() {
+  let banner = $(".banner");
+  let top = "calc(50vh - " + banner.height() / 2 + "px)";
+  banner.css({ top });
+  $(".banner-wrapper").removeClass("close");
+}
+
 function closeBanner() {
-  console.log("hi");
-  $(".banner").addClass("close");
+  $(".banner-wrapper").addClass("close");
 }
 
 document.cookie = 'SameSite=None; Secure';
@@ -109,6 +115,7 @@ window.addEventListener("scroll", scrollListener);
 window.onload = function() {
   scrollListener();
   showOnLoad();
+  openBanner();
   checkSection();
   toggleNavbarListener();
 };
