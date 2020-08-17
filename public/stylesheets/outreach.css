@@ -15,12 +15,21 @@
 
 .electronics-kit > div > div {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 .electronics-kit > div > div img {
   width: 45%;
-  margin: 0 2.5%;
+  margin: 10px;
+}
+@media (max-width: 500px) {
+  .electronics-kit > div > div {
+    flex-direction: column;
+  }
+  .electronics-kit > div > div img {
+    width: 100%;
+  }
 }
 .electronics-kit .materials {
   padding: 0 2.5%;

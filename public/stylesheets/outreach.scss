@@ -24,11 +24,18 @@ $lunchImg: url("/assets/images/photos/lunch.jpg");
 .electronics-kit {
   & > div > div {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     img {
       width: 45%;
-      margin: 0 2.5%;
+      margin: 10px;
+    }
+    @media #{variables.$phoneQuery} {
+      flex-direction: column;
+      img {
+        width: 100%;
+      }
     }
   }
   .materials {
