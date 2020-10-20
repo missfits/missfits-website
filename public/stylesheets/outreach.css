@@ -42,6 +42,7 @@
   padding-top: 28.125%;
   margin: 10px;
   position: relative;
+  min-height: 250px;
 }
 .electronics-kit .materials .item iframe {
   position: absolute;
@@ -53,16 +54,45 @@
 .electronics-kit .materials .item img {
   transition: all 0.2s ease;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -10px;
+  left: -10px;
   width: 100%;
   height: 100%;
-  border-radius: 7px;
-  box-shadow: #0003 0 0 5px;
+  object-fit: cover;
+  object-position: top left;
 }
 .electronics-kit .materials .item img:hover {
   transition: all 0.2s ease;
   box-shadow: #0003 0 0 10px;
+}
+.electronics-kit .materials .item > div {
+  transition: all 0.2s ease;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.electronics-kit .materials .item > div:hover {
+  transition: all 0.2s ease;
+  background-color: #0005;
+}
+.electronics-kit .materials .item > div:hover .fas {
+  transition: all 0.2s ease;
+  transform: translateY(10px);
+}
+.electronics-kit .materials .item > div div {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+.electronics-kit .materials .item > div div .fas {
+  transition: all 0.2s ease;
+  font-size: 64px;
+  color: #000;
 }
 @media (max-width: 500px) {
   .electronics-kit .materials {
