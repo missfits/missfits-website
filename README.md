@@ -64,3 +64,26 @@ The contact form sends its data to Firebase, which will then send an email to
 [missfitsrobotics@gmail.com](mailto:missfitsrobotics@gmail.com) or
 [pr.missfitsrobotics@gmail.com](mailto:pr.missfitsrobotics@gmail.com) (soon to be implemented using Firebase functions),
 rather than using the PHP mail function or something similar.
+
+Pushing Changes
+---------------
+
+In order to push changes to the website, you'll need to [download Firebase CLI](https://firebase.google.com/docs/cli). The method I recommend is using `npm` (you may need to [download Node.js](https://nodejs.org/en/download/) if you haven't already):
+
+```bash
+npm install -g firebase-tools
+```
+
+Next, send your email address (must be a Google account) to me so I can give you access to the Firebase project. Then, log into your Google account in the CLI by running
+
+```bash
+firebase login
+```
+
+Lastly, you should be able to deploy to the site with the command
+
+```bash
+firebase deploy --only hosting -m "<deploy message here>"
+```
+
+More detailed documentation can be found on the [Firebase CLI Reference page](https://firebase.google.com/docs/cli).
