@@ -9,9 +9,12 @@
 .athena {
   background-image: linear-gradient(#00000040, #00000040), url("../assets/images/banners/athena-background.JPG");
 }
-
 .artemis {
   background-image: linear-gradient(#00000040, #00000040), url("../assets/images/banners/artemis-background.jpeg");
+}
+.eos {
+  background-image: linear-gradient(#00000040, #00000040), url("../assets/images/banners/eos-background.JPEG");
+
 }
 
 .challenge {
